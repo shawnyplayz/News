@@ -47,9 +47,7 @@ export default class Dashboard extends Component {
                       </li>
                     </ul>
                   </div>
-                  {/* <!-- sidebar-menu  --> */}
                 </div>
-                {/* <!-- sidebar-content  --> */}
               </nav>
             </div>
           </div>
