@@ -1,10 +1,18 @@
-import { bookmark } from "./actions";
-const initialState = [];
+// import { bookmark, unmark } from "./actions";
+
+const initialState = {
+  bookMarkArr: []
+};
 
 const reducer = (state = initialState, action) => {
+  debugger
   switch (action.type) {
-    case bookmark:
-      return { ...state, initialState: initialState.push(bookmark) };
+    case 'BOOKMARK':
+      state[action.key] = action.value
+      return Object.assign({}, state)
+    case 'GETRID':
+      state[action.key] = action.value
+      return Object.assign({}, state)
     default:
       return state;
   }
