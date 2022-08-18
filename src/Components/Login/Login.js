@@ -1,19 +1,26 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { Redirect, withRouter } from 'react-router-dom';
+import swal from 'sweetalert';
 import "./Login.css"
 
 class Login extends Component {
   constructor(props) {
     super(props)
-
     this.state = {
       uname: null,
       pass: null,
-      loggedIn: false
+      loggedIn: false,
     }
     this.onSubmit = this.onSubmit.bind(this)
 
+  }
+  componentDidMount() {
+    swal({
+      title: "Hello😁!",
+      text: "User Name : admin Password: admin",
+      icon: "info",
+    });
   }
   // handleChange(e) {
   //   this.setState({
@@ -21,23 +28,32 @@ class Login extends Component {
   //   })
   // }
   onSubmit(e) {
+    e.preventDefault();
     debugger
     try {
-      if (this.state.uname === "admin" && this.state.pass === "admin")
+      if (this.state.uname === "admin" && this.state.pass === "admin") {
         this.setState({
           loggedIn: true
         })
-      this.props.history.push("/Dashboard");
+        // this.props.history.push("/Dashboard");
+      }
+      else {
+        swal({
+          title: "Invalid Credentials!",
+          text: "User Name : admin Password: admin",
+          icon: "error",
+        });
+        return
+      }
     }
     catch (error) {
       console.log("Login page error==>", error);
     }
-
   }
   render() {
     if (this.state.loggedIn === true) {
       debugger
-      return <Redirect to='/Home' />
+      return <Redirect to='/Dashboard' />
     }
     return (
       <>

@@ -46,7 +46,6 @@ class Home extends Component {
           text: "This news is already bookmarked!",
           icon: "error",
         });
-        console.log("this news is already bookmarked");
         return
       }
       // if (this.state.captureArr[index].id === this.props.bookMarkArr[j])
