@@ -71,13 +71,13 @@ class Login extends Component {
                     <form action="" method="post" name="login">
                       <div className="form-group my-2">
                         <label for="exampleInputEmail1" className='float-start h6'>User Name</label>
-                        <input type="text" name="uname" value={this.state.uname} className="form-control" id="text" aria-describedby="emailHelp" placeholder="Enter User Name" onChange={(e) => this.setState({
+                        <input type="text" name="uname" data-testid="userName" value={this.state.uname} className="form-control" id="text" aria-describedby="emailHelp" placeholder="Enter User Name" onChange={(e) => this.setState({
                           uname: e.target.value
                         })} />
                       </div>
                       <div className="form-group my-2">
                         <label for="exampleInputEmail1" className='float-start h6'>Password</label>
-                        <input type="password" name="password" id="password" value={this.state.pass} className="form-control" aria-describedby="emailHelp" placeholder="Enter Password" onChange={(e) => this.setState({
+                        <input type="password" name="password" id="password" data-testid="pass" value={this.state.pass} className="form-control" aria-describedby="emailHelp" placeholder="Enter Password" onChange={(e) => this.setState({
                           pass: e.target.value
                         })} />
                       </div>
